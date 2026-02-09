@@ -8,7 +8,7 @@ const UploadWidget = ({ value = null, onChange, disabled = false }) => {
     const widgetRef = useRef<CloudinaryWidget | null>(null);
     const onChangeRef = useRef(onchange);
 
-    const [preview, setPreview] = useState<CloudinaryWidget | null>(value)
+    const [preview, setPreview] = useState<UploadWidgetValue | null>(value)
     const [deleteToken, setDeleteToken] = useState<string | null>(null)
     const [isRemoving, setIsRemoving] = useState(false)
 
@@ -42,7 +42,7 @@ const UploadWidget = ({ value = null, onChange, disabled = false }) => {
                     }
                     setPreview(payload)
                     setDeleteToken(result.info.delete_token ?? null)
-                    onchangeRef.current?.(payload);
+                    onChangeRef.current?.(payload);
                 }
             })
             return true;

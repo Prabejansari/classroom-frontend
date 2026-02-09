@@ -53,7 +53,7 @@ const ClassesCreate = () => {
     control,
   } = form;
 
-  //   const bannerPublicId = form.watch("bannerCldPubId");
+    const bannerPublicId = form.watch("bannerCldPubId");
 
   const onSubmit = async (values: z.infer<typeof classSchema>) => {
     try {
